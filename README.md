@@ -32,67 +32,57 @@
  - vm-zabbix
  - vm-elk
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/1.jpg)
 ---
-Ссылка 1
-
 Инфраструктуру размещена в Yandex Cloud. 
 
 ### Сайт 
-Виртуальные машины (vm-web1 и vm-web2) созданы в разных зонах (ru-central1-b и ru-central1-a). 
+Виртуальные машины (vm-web1 и vm-web2) созданы в разных зонах (ru-central1-b и ru-central1-a).
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/2.jpg)
 ---
-ссылка 2
 
 На виртуальных машинах (веб-серверах) установлен сервер nginx (файл nginx.yaml).  
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/3.jpg)
 ---
-Ссылка 3
 
 Виртуальные машины находятся во внутренней сети и  доступ к ним по ssh через бастион-сервер (vm-ansible). Доступ к web-порту виртуальной машины через балансировщик yandex cloud.
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/4.jpg)
+
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/5.jpg)
 ---
-Ссылка 4 и 5
 
 Осуществлена настройка балансировщика:
 
 1. Создана [Target Group] включены в неё две созданных ВМ.
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/6.jpg)
 ---
-Ссылка 6
 
 2. Создана [Backend Group], осуществлена настройка backends на target group, ранее созданную. 
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/7.jpg)
 ---
-ссылка 7
 
 3. Создан [HTTP router].
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/8.jpg)
 ---
-ссылка 8
 
 4. Создан [Application load balancer].
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/9.jpg)
 ---
-ссылка 9
 
 Протестирован сайт
 `curl -v <публичный IP балансера>:80` 
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/10.jpg)
+
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/19.jpg)
 ---
-ссылка 10
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
----
-ссылка 19
 
 ### Мониторинг
 Создана ВМ (vm-zabbix), на которой развернут Zabbix. 
