@@ -1,5 +1,5 @@
 
-#  Дипломная работа по профессии «Системный администратор»
+#  Дипломная работа по профессии «Системный администратор». Исполнитель Канюгин Сергей sys-24.
 
 Содержание
 ==========
@@ -87,82 +87,69 @@
 ### Мониторинг
 Создана ВМ (vm-zabbix), на которой развернут Zabbix. 
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/11.jpg)
 ---
-ссылка 11
 
 Zabbix-server расположен по адресу http://158.160.92.20:8080/
 Логин Admin
 Пароль zabbix
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/12.jpg)
 ---
-ссылка 12
 
 На каждой ВМ установлен Zabbix Agent, агенты настроены на отправление метрик в Zabbix. 
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/13.jpg)
 ---
-ссылка 13
 
 Настроены дешборды с отображением метрик (CPU, RAM, диски, сеть, http запросов к веб-серверам). 
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/14.jpg)
 ---
-ссылка 14
 
 ### Логи
 Cоздана ВМ (vm-elk), на которой развернут Elasticsearch. 
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/15.jpg)
 ---
-ссылка 15
 
 Установлен filebeat в ВМ к веб-серверам (vm-web1, vm-web2), который настроен на отправку access.log, error.log nginx в Elasticsearch.
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/16.jpg)
 ---
-Ссылка 16
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
----
-ссылка 18 
-
 На ВМ (vm-elk) развернута Kibana, с помощью которой осуществлено соединение с Elasticsearch. Kibana находится по адресу http://158.160.69.82:5601
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
----
-ссылка 17 
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/17.jpg)
 
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/18.jpg)
+---
 ### Сеть
 Развернут один VPC. 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/20.jpg)
+
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/21.jpg)
 ---
-ссылка 20
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
----
-ссылка 21
 
 Настроены [Security Groups] соответствующих сервисов на входящий трафик только к нужным портам.
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
-ссылки с 22-26
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/22.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/23.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/24.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/25.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/26.jpg)
+---
 
 Настроена ВМ (vm-ansible) с публичным адресом, в которой открыт только один порт — ssh.  Эта вм реализовывает концепцию  [bastion host]. 
 
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/27.jpg)
 ---
-ссылка 27
-
 
 ### Резервное копирование
 Создан snapshot дисков всех ВМ. Ограничено время жизни snaphot в неделю. Сами snaphot настроены на ежедневное копирование.
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
-![скрин для Git](https://github.com/Sergeykanyugin/sdb-homeworks/blob/sdbsql-24/11-03/libana.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/28.jpg)
+![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/29.jpg)
 ---
-ссылка 28 и 29 
 
 ## Дипломная работа и программный код Terraform и Ansible находятся в отдельном репазитории
 
+
+https://github.com/Sergeykanyugin/sys-diplom 
