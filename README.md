@@ -90,7 +90,7 @@
 ![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/11.jpg)
 ---
 
-Zabbix-server расположен по адресу http://158.160.92.20:8080/
+Zabbix-server расположен по адресу http://84.201.166.190:8080/
 Логин Admin
 Пароль zabbix
 
@@ -117,7 +117,7 @@ Cоздана ВМ (vm-elk), на которой развернут Elasticsearc
 
 ![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/16.jpg)
 ---
-На ВМ (vm-elk) развернута Kibana, с помощью которой осуществлено соединение с Elasticsearch. Kibana находится по адресу http://158.160.69.82:5601
+На ВМ (vm-elk) развернута Kibana, с помощью которой осуществлено соединение с Elasticsearch. Kibana находится по адресу http://51.250.19.82:5601
 
 ![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/17.jpg)
 
