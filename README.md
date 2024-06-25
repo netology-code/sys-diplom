@@ -71,6 +71,8 @@
 
 ссылка 10
 
+ссылка 19
+
 ### Мониторинг
 Создана ВМ (vm-zabbix), на которой развернут Zabbix. 
 
@@ -91,19 +93,39 @@ Zabbix-server расположен по адресу http://158.160.92.20:8080/
 ссылка 14
 
 ### Логи
-Cоздайте ВМ, разверните на ней Elasticsearch. Установите filebeat в ВМ к веб-серверам, настройте на отправку access.log, error.log nginx в Elasticsearch.
+Cоздана ВМ (vm-elk), на которой развернут Elasticsearch. 
 
-Создайте ВМ, разверните на ней Kibana, сконфигурируйте соединение с Elasticsearch.
+ссылка 15
+
+Установлен filebeat в ВМ к веб-серверам (vm-web1, vm-web2), который настроен на отправку access.log, error.log nginx в Elasticsearch.
+
+Ссылка 16
+
+ссылка 18 
+
+На ВМ (vm-elk) развернута Kibana, с помощью которой осуществлено соединение с Elasticsearch. Kibana находится по адресу http://158.160.69.82:5601
+
+ссылка 17 
 
 ### Сеть
-Разверните один VPC. Сервера web, Elasticsearch поместите в приватные подсети. Сервера Zabbix, Kibana, application load balancer определите в публичную подсеть.
+Развернут один VPC. 
 
-Настройте [Security Groups](https://cloud.yandex.com/docs/vpc/concepts/security-groups) соответствующих сервисов на входящий трафик только к нужным портам.
+ссылка 20
 
-Настройте ВМ с публичным адресом, в которой будет открыт только один порт — ssh.  Эта вм будет реализовывать концепцию  [bastion host]( https://cloud.yandex.ru/docs/tutorials/routing/bastion) . Синоним "bastion host" - "Jump host". Подключение  ansible к серверам web и Elasticsearch через данный bastion host можно сделать с помощью  [ProxyCommand](https://docs.ansible.com/ansible/latest/network/user_guide/network_debug_troubleshooting.html#network-delegate-to-vs-proxycommand) . Допускается установка и запуск ansible непосредственно на bastion host.(Этот вариант легче в настройке)
+ссылка 21
 
-Исходящий доступ в интернет для ВМ внутреннего контура через [NAT-шлюз](https://yandex.cloud/ru/docs/vpc/operations/create-nat-gateway).
+Настроены [Security Groups] соответствующих сервисов на входящий трафик только к нужным портам.
+
+ссылки с 22-26
+
+Настроена ВМ (vm-ansible) с публичным адресом, в которой открыт только один порт — ssh.  Эта вм реализовывает концепцию  [bastion host]. 
+
+ссылка 27
+
 
 ### Резервное копирование
-Создайте snapshot дисков всех ВМ. Ограничьте время жизни snaphot в неделю. Сами snaphot настройте на ежедневное копирование.
+Создан snapshot дисков всех ВМ. Ограничено время жизни snaphot в неделю. Сами snaphot настроены на ежедневное копирование.
 
+ссылка 28 и 29 
+
+## Дипломная работа и программный код Terraform и Ansible находятся в отдельном репазитории
