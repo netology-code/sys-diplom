@@ -131,6 +131,7 @@ Cоздана ВМ (vm-elk), на которой развернут Elasticsearc
 ---
 
 Настроены [Security Groups] соответствующих сервисов на входящий трафик только к нужным портам.
+
 ![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/22.jpg)
 ![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/23.jpg)
 ![скрин для Git](https://github.com/Sergeykanyugin/sys-diplom/blob/diplom-zabbix/img/24.jpg)
